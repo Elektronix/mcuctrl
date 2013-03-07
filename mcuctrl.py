@@ -224,15 +224,15 @@ class Daemon(object):
         
         # do this only for production code
         # uncomment to redirect std file descriptors from daemon to /dev/null
-#        if __status__ == 'production':
-#            sys.stdout.flush()
-#            sys.stderr.flush()
-#            std_in = file(self.stdin, 'r')
-#            std_out = file(self.stdout, 'a+')
-#            std_err = file(self.stderr, 'a+', 0)
-#            os.dup2(std_in.fileno(), sys.stdin.fileno())
-#            os.dup2(std_out.fileno(), sys.stdout.fileno())
-#            os.dup2(std_err.fileno(), sys.stderr.fileno())
+        if __status__ == 'production':
+            sys.stdout.flush()
+            sys.stderr.flush()
+            std_in = file(self.stdin, 'r')
+            std_out = file(self.stdout, 'a+')
+            std_err = file(self.stderr, 'a+', 0)
+            os.dup2(std_in.fileno(), sys.stdin.fileno())
+            os.dup2(std_out.fileno(), sys.stdout.fileno())
+            os.dup2(std_err.fileno(), sys.stderr.fileno())
     
         # write pidfile
         atexit.register(self.del_pid)
