@@ -1,0 +1,17 @@
+mcuctrl changelog:
+
+v1.1 - 17.11.2011
+ - Remote control can now be used. Daemon will only set brightness if pwm_min/pwm_max is out of specified range.
+ 
+v1.0 - 14.11.2011
+ -Typo in mcuctrl.conf which led to that the pwm_min and max values from configuration file was not being used.
+ -Logging now works as intended on python2.5
+ -Log levels on error messages has been slightly altered to a more suitable level. Should lead to less noise in log files.
+ -Error handling has been dealt with. Program should (almost) never present exceptions to user.
+ -Some code cleanup.
+
+v0.3 - 09.11.2011
+ - Production stable
+ 
+v0.2 - 09.11.2011
+ - Test release before production
