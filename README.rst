@@ -11,3 +11,7 @@ Installation
 #. Copy mcuctrl.conf to `/etc/mcuctrl.conf`
 #. Edit `/etc/mcuctrl.conf` to your liking
 #. Start with
+
+    .. code-block:: none
+
+        root@computer:~# python /usr/local/bin/mcuctrl -d start
